@@ -63,8 +63,6 @@ namespace nfocus.dylanwesthead.dicegame
             Console.WriteLine($"The computer threw a {dice1.diceNumber} and a {dice2.diceNumber}.\nTheir total score is {compScore}");
 
             AnnounceWinner(yourScore, compScore);
-            PlayAgain(dice1, dice2);
-
         }
 
         /*
@@ -82,12 +80,11 @@ namespace nfocus.dylanwesthead.dicegame
             }
         }
 
-
         /*
-         * This method provides a Y/N prompt to allow the user to play again.
-         * 
-         */
-        public void PlayAgain(Dice dice1, Dice dice2)
+        * This method provides a Y/N prompt to allow the user to play again.
+        * 
+        */
+        public Boolean PlayAgain(Dice dice1, Dice dice2)
         {
             string answer;
             do
@@ -96,10 +93,10 @@ namespace nfocus.dylanwesthead.dicegame
                 answer = Console.ReadLine();
             } while (answer.ToUpper() != "Y" && answer.ToUpper() != "N");
 
-            // If yes, run the PlayGame function again.
-            if (answer.ToUpper() == "Y") { PlayGame(dice1, dice2); }
+            // If yes, return true.
+            if (answer.ToUpper() == "Y") { return true; }
             // If no, say goodbye.
-            else { Console.WriteLine("\nThankyou for playing, goodbye!"); }
+            else { Console.WriteLine("\nThankyou for playing, goodbye!"); return false; }
         }
     }
 }
