@@ -17,7 +17,7 @@ namespace nfocus.dylanwesthead.dicegame
         public void StartGame()
         {
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~ WELCOME TO THE DICE GAME! ~~~~~~~~~~~~~~~~~~~~~~");
-            Console.WriteLine("\nRoll 2 die and the highest total score wins.");
+            Console.WriteLine("\nRoll 2 dices and the highest total score wins.");
             Console.WriteLine("Enter the number of sides you would like for each dice, the default is 6.");
 
             string input = Console.ReadLine();
